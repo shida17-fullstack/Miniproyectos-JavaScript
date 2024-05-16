@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../img/reloj.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 2rem;
+    color: white;
+}
+
+.clock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+.countdown-prefix {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px; /* Agrega un espacio entre el texto y el reloj */
+}
+
+.countdown-suffix {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-top: 10px; /* Agrega un espacio entre el reloj y el texto */
+}
+
+.item {
+    background-color: rgba(255, 215, 0, 0.8); /* Dorado con opacidad */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra de texto para aumentar el contraste */
+}
+
+
+/* Media Queries para hacer el reloj responsive */
+@media screen and (max-width: 768px) {
+    .clock {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .clock {
+        grid-template-columns: repeat(1, 1fr); /* Cambia a 1 columna en pantallas muy pequeñas */
+    }
+
+    .countdown-prefix,.countdown-suffix{
+        padding: 10px;
+    }
+}

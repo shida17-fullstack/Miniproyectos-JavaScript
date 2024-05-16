@@ -1,0 +1,339 @@
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto; /* Secciones del menú, contenido y pie de página */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+.title {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Agrega un margen superior para separar el título del menú */
+    color: #2c3e50; /* Color del texto */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Mayúsculas */
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas flexibles que se ajustan automáticamente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+.cursos-container {
+    background-color: #f0f0f0; /* Color de fondo de las tarjetas */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: left; /* Alinear texto a la izquierda dentro de las tarjetas */
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.cursos-container:hover {
+    transform: translateY(-5px);
+}
+
+.contenido-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Ajustar margen inferior del título */
+}
+
+.contenido-container p {
+    margin-top: 5px; /* Ajustar margen superior del párrafo */
+    margin-bottom: 0;
+}
+
+/* Menu */
+.menu {
+    background-color: #333;
+    color: #ffd700; /* Dorado para el texto */
+    text-align: center;
+    transition: background-color 0.3s; /* Efecto de transición al cambiar el color de fondo */
+}
+
+.menu:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el cursor sobre el menú */
+}
+
+img.logo {
+    height: 80px; /* Ajusta la altura del logotipo */
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li {
+    font-size: 17px;
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Menú hamburguesa */
+.menu-btn {
+    display: none; /* Oculto por defecto */
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px auto;
+    transition: background-color 0.3s;
+}
+
+/* Acerca de */
+.acerca-de {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 800px; /* Altura deseada */
+    overflow: hidden; /* Para asegurarse de que la imagen no desborde */
+}
+
+.acerca-de img {
+    max-width: 50%; /* Ancho máximo del 50% del contenedor */
+    width: auto; /* Restablece el ancho para mantener la proporción */
+    height: 100%; /* Ocupa el 100% del alto del contenedor */
+    margin-right: 20px;
+}
+
+.acerca-de-content {
+    flex-grow: 1; /* El contenido ocupará el espacio restante */
+    justify-content: center; /* Justificar horizontalmente */
+    align-items: center; /* Alinear verticalmente */
+    padding: 20px; /* Ajustado el padding */
+}
+
+.acerca-de h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.acerca-de p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.acerca-de ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.acerca-de li {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+
+/* Modal Contacto */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    max-width: 80%; /* Ajustado para hacerlo más grande */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Banner */
+.banner {
+    background-image: url("../img/banner.jpg");
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    height: 500px; /* Establece la altura del banner */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.banner h1 {
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; /* Mantiene el footer abajo incluso si hay poco contenido */
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto; /* Ajusta el margen superior para centrarlo verticalmente */
+        max-width: 90%; /* Reducir el ancho máximo */
+    }
+
+    .menu-list li {
+        display: block;
+        margin: 0;
+        padding: 10px;
+        border-bottom: 1px solid #555;
+        width: 100%;
+    }
+
+    img.logo {
+        height: 60px; /* Altura del logo en dispositivos móviles */
+    }
+
+    .menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+
+    .menu-list {
+        display: none; /* Oculta la lista de menú */
+        position: absolute;
+        left: 0;
+        width: 100%; /* Menú de ancho completo */
+        background-color: #333;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .menu-list li:last-child {
+        border-bottom: none;
+    }
+
+    .menu-list li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Muestra el menú cuando .menu-btn está activo */
+    .menu-btn.active + .menu-list,
+    .menu-list.show { 
+        display: block;
+    }
+
+    .acerca-de {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .acerca-de img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .banner {
+        height: 70vh; /* Altura más pequeña para dispositivos móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 5% auto; /* Ajusta el margen superior para centrarlo verticalmente */
+        max-width: 90%; /* Reducir el ancho máximo */
+    }
+
+    img.logo {
+        height: 46px; /* Altura del logo en pantallas muy pequeñas */
+    }
+
+    .menu-list li {
+        padding: 10px 0; /* Más espacio alrededor de los elementos del menú */
+    }
+    .acerca-de h2 {
+        font-size: 20px;
+    }
+
+    .acerca-de p, .acerca-de ul,.acerca-de li   {
+        font-size: 14px;
+    }
+
+    .banner {
+        height: 40vh; /* Altura aún más pequeña para pantallas muy pequeñas */
+    }
+}

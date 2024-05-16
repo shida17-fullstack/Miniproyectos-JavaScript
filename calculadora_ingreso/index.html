@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Ingresos</title>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <div class="calculator">
+            <h1>Calculadora de Ingresos</h1>
+            <label for="horas">Horas trabajadas:</label>
+            <input type="number" id="horas" placeholder="Ingrese horas trabajadas"><br>
+            <label for="salario">Salario por hora:</label>
+            <input type="number" id="salario" placeholder="Ingrese salario por hora, quincenal o mensual"><br>
+            <label for="tipo">Tipo de salario:</label>
+            <select id="tipo">
+                <option value="hora">Por hora</option>
+                <option value="quincenal">Quincenal</option>
+                <option value="mensual">Mensual</option>
+            </select><br>
+            <button onclick="calcularIngreso()">Calcular</button>
+            <div id="resultado"></div>
+        </div>
+        <script src="calculadoraIngreso.js"></script>
+</body>
+</html>

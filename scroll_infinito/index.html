@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scroll Infinito</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <!-- Menú de navegación -->
+        <nav class="menu">
+            <!-- Botón de menú de hamburguesa -->
+            <button class="menu-btn">
+                <div class="menu-icon"></div>
+                <div class="menu-icon"></div>
+                <div class="menu-icon"></div>
+            </button>
+            <!-- Logo -->
+            <a href="#" class="logo"><img src="img/logo.svg" class="logo" alt="Logo"></a>
+            <!-- Lista de menú -->
+            <ul class="menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#main-content">Cursos</a></li>
+                <li><a href="#acerca-de">Sobre nosotros</a></li>
+                <li><a href="#" id="openModal">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- Modal Contacto -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Formulario de Contacto</h2>
+                <form id="contactForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+       </div>
+        <!-- Banner -->
+        <div class="banner">
+            <h1>Estudia programación</h1>
+        </div>
+        <!-- Acerca de -->
+        <div id="acerca-de" class="acerca-de">
+            <img src="img/empresa.jpg" alt="Imagen de la empresa">
+            <div class="acerca-de-content">
+                <h2>Acerca de Nosotros</h2>
+                <p>Somos una empresa apasionada por la enseñanza de la programación. Nuestro objetivo es capacitar a personas de todas las edades y niveles de experiencia para que adquieran habilidades en programación y tecnología.</p>
+                <p>¿Qué nos distingue?</p>
+                <ul>
+                    <li><strong>Experiencia:</strong> Contamos con un equipo de instructores altamente calificados con años de experiencia en la industria de la tecnología.</li>
+                    <li><strong>Variedad de Cursos:</strong> Ofrecemos una amplia gama de cursos, desde los fundamentos de HTML y CSS hasta temas avanzados como inteligencia artificial y desarrollo de aplicaciones móviles.</li>
+                    <li><strong>Metodología Práctica:</strong> Creemos en el aprendizaje práctico. Nuestros cursos incluyen proyectos reales y ejercicios que permiten a los estudiantes aplicar lo que han aprendido.</li>
+                    <li><strong>Comunidad:</strong> Fomentamos la colaboración y el intercambio de conocimientos entre nuestros estudiantes. Organizamos eventos, hackathons y grupos de estudio para crear una comunidad activa y solidaria.</li>
+                    <li><strong>Accesibilidad:</strong> Queremos que la programación sea accesible para todos. Ofrecemos opciones de precios flexibles y becas para garantizar que nadie se quede atrás.</li>
+                </ul>
+                <p>¡Únete a nosotros en esta emocionante aventura de aprendizaje y descubre el mundo de la programación!</p>
+            </div>
+        </div>
+        <!-- Contenedor principal -->
+        <div class="container">
+            <h1 class="title">Cursos de Programación</h1>
+            <div id="main-content" class="main-content">
+                <div class="cursos-container">
+                    <div class="contenido-container">
+                        <h2>Curso de HTML y CSS</h2>
+                        <p>Este curso te enseña los fundamentos de HTML y CSS para crear sitios web estáticos.</p>
+                    </div>
+                </div>
+                <div class="cursos-container">
+                    <div class="contenido-container">
+                        <h2>Curso de Python</h2>
+                        <p>Python es un lenguaje de programación versátil y poderoso. En este curso aprenderás sus fundamentos.</p>
+                    </div>
+                </div>
+                <div class="cursos-container">
+                    <div class="contenido-container">
+                        <h2>Curso de NodeJs</h2>
+                        <p>Desarrolla aplicaciones web con Node.js, para construir aplicaciones web escalables y eficientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 - Todos los derechos reservados</p>
+            <p>Desarrollado por AndreaDeveloper</p>
+        </footer>
+        <!-- Indicador de carga para el scroll infinito -->
+        <div id="cargando">
+            Cargando...
+        </div>
+        <script src="js/scrollInfinito.js"></script>
+        <script src="js/menuResp.js"></script>
+        <script src="js/modal.js"></script>
+</body>
+</html>

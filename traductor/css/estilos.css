@@ -1,0 +1,260 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/fondo.jpg');
+    background-size: cover; /* Utilizar cover para el fondo de pantalla en pantallas grandes */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 24px; /* Ajustar el tamaño del texto */
+    font-weight: bold; /* Ajustar el grosor del texto */
+    text-align: center; /* Centrar el texto */
+    color: #fff; /* Color del texto */
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.language-label {
+    margin-right: 10px;
+    color: #fff; /* Color del texto */
+}
+
+.language-selector {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.start-button, .save-button, .edit-button, .clear-button {
+    padding: 10px 16px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.start-button{
+    background-color: #007bff;
+
+}
+
+.save-button{
+    background-color: #025159;
+}
+
+.edit-button{
+    background-color: #A67458;
+}
+
+.clear-button{
+    background-color:#520120;
+}
+
+/* Icono del micrófono */
+.microfono-icon {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px; 
+}
+
+/* Modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Hacer que el modal esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar el desplazamiento */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+}
+  
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Ajustar el margen superior e inferior para centrarlo verticalmente */
+    padding: 40px; /* Aumentar el espacio de relleno para hacerlo más grande */
+    border: 1px solid #888;
+    width: 60%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo del modal */
+    text-align: center; /* Centrar el contenido */
+}  
+  
+/* Botones en el modal */
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}  
+  
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+/* Mensaje de borrado exitoso */
+.delete-message {
+    display: none;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.transcription-result {
+    display: flex; /* Establecer el contenedor como flexbox */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar elementos horizontalmente */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+}
+
+.transcription-area {
+    width: 95%; /* Hacer que el área de transcripción ocupe todo el ancho disponible */
+    margin-bottom: 10px; /* Agregar un margen inferior para separarlo de los botones */
+}
+
+
+.translations-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.translations-list li {
+    background-color: #d9eaf4;
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+}
+
+.translations-list li:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+.translations-list li:nth-child(odd) span {
+    text-align: right;
+}
+
+.delete-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff5722;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeOut 3s ease forwards;
+    display: none;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+/* Para pantallas de hasta 480px de ancho */
+@media screen and (max-width: 480px) {
+    body {
+        background-size: contain;
+        height: auto;
+    }
+    .controls {
+        flex-direction: column; /* Apilar elementos verticalmente en pantallas pequeñas */
+        align-items: flex-start; /* Alinear elementos a la izquierda */
+        margin-bottom: 0px;
+    }
+
+    .language-label {
+        margin-bottom: 10px; /* Agregar espacio entre el selector de idioma y los botones */
+    }
+
+    .transcription-area {
+        width: 90%;
+        height: 100px;
+    }
+
+    .start-button {
+        width: 100%;
+        margin-top: 7px;
+        margin-left: 0px;
+    }
+
+    .save-button, .edit-button, .clear-button {
+        width: 90%; /* Reducir el ancho de los botones para que se ajusten */
+        margin-right: 5px;
+        margin-left: 15px;
+    }
+
+    .language-selector {
+        width: 100%; /* Hacer que el selector de idioma ocupe todo el ancho disponible */
+    }
+
+    .modal-content {
+        width: 70%; /* Reducir el ancho del modal en pantallas pequeñas */
+    }
+}
+
+/* Para pantallas de hasta 768px de ancho */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 20px; /* Reducir el tamaño del título en pantallas medianas */
+    }
+    
+    .transcription-area {
+        width: 90%;
+        height: 150px; /* Ajuste para pantallas medianas */
+    }
+}
+
+/* Para pantallas de hasta 1024px de ancho */
+@media screen and (max-width: 1024px) {
+    .transcription-area {
+        width: 90%;
+        height: 200px;
+    }
+
+    .transcription-result {
+        width: 100%;
+    }
+}
+
+/* Para pantallas de más de 1024px de ancho */
+@media screen and (min-width: 1024px) {
+    .transcription-area {
+        width: 80%;
+        height: 250px;
+    }
+    
+    .transcription-result {
+        width: 100%;
+    }
+}
