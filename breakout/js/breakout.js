@@ -208,7 +208,7 @@ function resetGame() {
     }
 }
 
-// Move the paddle based on user input
+
 function movePaddle() {
     if (rightPressed && paddleX < canvas.width - paddleWidth) {
         paddleX += 7;
@@ -217,7 +217,7 @@ function movePaddle() {
     }
 }
 
-// Update the game state including ball movement
+// Actualizar el juego 
 function updateGame() {
     movePaddle();
     moveBall();
@@ -225,7 +225,7 @@ function updateGame() {
 }
 
 
-// Move the ball
+//Mover pelota
 function moveBall() {
     x += dx;
     y += dy;
@@ -238,10 +238,8 @@ function moveBall() {
         dy = -dy;
     } else if (y + dy > canvas.height - ballRadius) {
         if (x > paddleX && x < paddleX + paddleWidth) {
-            // If the ball hits the paddle, change its vertical direction
             dy = -dy;
         } else {
-            // If the ball misses the paddle, game over
             gameOverMessage = "¡Juego terminado! Puntaje: " + score;
             setTimeout(() => {
                 gameOverMessage = "";
@@ -262,7 +260,7 @@ function adjustBallSpeedForSmallScreens() {
 // Llamar a la función para ajustar la velocidad de la pelota
 adjustBallSpeedForSmallScreens();
 
-// Draw everything on the canvas and update the game state
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
@@ -274,5 +272,5 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-// Start the game by calling the draw function
+
 draw();
