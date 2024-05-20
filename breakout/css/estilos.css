@@ -1,0 +1,78 @@
+/* Estilos para el contenedor y el canvas */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evitar desplazamiento en todo el documento */
+}
+
+/* Estilos para el contenedor y el canvas */
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Usar el 100% de la altura de la ventana del navegador */
+    background-image: url('../img/breakout_fondo.jpg'); /* URL de la imagen de fondo */
+    background-size: cover; /* Ajustar la imagen de fondo para cubrir el contenedor */
+    background-position: center bottom;
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen de fondo */
+    overflow: hidden; /* Evitar desbordamiento dentro del contenedor */
+    flex-direction: column;
+}
+
+canvas {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #8A2BE2; /* Color del borde del canvas */
+    max-width: 90%;
+    max-height: 90%; /* Definiendo una altura máxima para el canvas */
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Ajustar el ancho del canvas al 100% */
+    height: auto; /* Ajustar la altura del canvas automáticamente */
+}
+
+/* Estilos para las flechas de control */
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: none; /* Ocultar las flechas por defecto */
+}
+
+.control-button {
+    font-size: 24px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #0095DD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.control-button:hover {
+    background-color: #0076aa;
+}
+
+/* Mostrar las flechas solo en dispositivos responsivos */
+@media (max-width: 768px) {
+    canvas {
+        width: 70%;
+    } 
+    
+    .controls {
+        bottom: 0px; 
+        margin-bottom: 0px;
+        margin-right: 10px;
+        display: flex;
+    }
+
+    .control-button {
+        font-size: 20px;
+    }
+
+        
+}
